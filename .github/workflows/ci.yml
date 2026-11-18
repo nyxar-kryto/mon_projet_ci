@@ -1,0 +1,19 @@
+name: Mon premier pipeline CI
+on:
+  push:
+    branches: [main]
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: recuperer le code
+        uses: actions/checkout@v4
+
+      - name: installer python 
+        uses: actions/setup-python@v5
+
+        with:
+        python-version: "3.12"
+      - name: afficher la version python 
+        run: python --version 
